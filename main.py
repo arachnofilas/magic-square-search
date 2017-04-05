@@ -32,9 +32,15 @@ def validate(rows, columns):
         sys.exit(1)
 
 
+def create_matrix(rows, columns):
+    return np.random.randint(10, size=(rows, columns))
+
+
 def initiate_search():
     args = parser()
     validate(args.rows, args.columns)
+    matrix = create_matrix(args.rows, args.columns)
+    print(matrix)
 
 
 if __name__ == '__main__':
