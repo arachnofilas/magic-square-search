@@ -3,17 +3,13 @@
 import argparse
 import sys
 import os
+import numpy as np
+
 
 def parser():
     parser = argparse.ArgumentParser(
         description='This tool searches for a number of magic squares ' +
         'in a given [n,m] matrix.')
-    parser.add_argument(
-        'file',
-        metavar='file',
-        type=str,
-        help='File to search in'
-        )
     parser.add_argument(
         'rows',
         metavar='rows',
@@ -29,8 +25,16 @@ def parser():
     return parser.parse_args()
 
 
+def validate(rows, columns):
+    if rows < 2 or columns < 2:
+        print('Magic number cannot appear in a matrix which is ' +
+        'smaller than [2,2]')
+        sys.exit(1)
+
+
 def initiate_search():
     args = parser()
+    validate(args.rows, args.columns)
 
 
 if __name__ == '__main__':
