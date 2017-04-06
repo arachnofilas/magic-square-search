@@ -40,7 +40,6 @@ def get_square_matrix_from(matrix,magic_square_counter):
     rows = matrix.shape[0]
     columns = matrix.shape[1]
     max_square_dimension = get_max_square_dimension(matrix)
-    print('\nMax square dimension is: ' + str(max_square_dimension) + '\n')
     i = 1
     for square_dimension in range(2,max_square_dimension+1):
         for row in range(rows):
@@ -49,9 +48,11 @@ def get_square_matrix_from(matrix,magic_square_counter):
                     temp_matrix = matrix[row:row+square_dimension,
                         column:column+square_dimension]
                     if is_magic_square(temp_matrix):
-                        print(temp_matrix)
-                        print('\n')
                         magic_square_counter += 1
+                        if magic_square_counter > 0:
+                            print(str(temp_matrix) + '\n')
+                        else:
+                            print('There are no magic squares')
                 else:
                     break
         i += 1
@@ -99,12 +100,13 @@ def main():
     args = parser()
     validate(args.rows, args.columns)
     matrix = generate_matrix(args.rows, args.columns)
-    print('\nGenerated matrix: \n\n'+ str(matrix))
+    print('\nGenerated matrix: \n\n'+ str(matrix) + '\n')
+    print('Magic squares:\n')
     magic_square_counter = 0
     get_square_matrix_from(matrix,magic_square_counter)
 
     #my_matrix = np.array([[4, 9, 2, 3, 5], [3, 5, 7, 4, 2], [8, 1, 6, 6, 2], [1, 1, 6, 6, 2]])
-    #print('\nMy matrix: \n\n'+ str(my_matrix))
+    #print('\nMy matrix: \n\n'+ str(my_matrix) + '\n')
     #get_square_matrix_from(my_matrix,magic_square_counter)
 
 
