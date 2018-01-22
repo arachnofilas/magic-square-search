@@ -36,4 +36,4 @@ More information can be found via help:
 
 ## Authors
 
-* **Dziugas Mikalkenas** - [mikaydzi](https://github.com/mikaydzi)
+* [mikaydzi](https://github.com/mikaydzi)
