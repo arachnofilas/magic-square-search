@@ -36,4 +36,4 @@ More information can be found via help:
 
 ## Authors
 
-* [mikaydzi](https://github.com/mikaydzi)
+* [mikayzo](https://github.com/mikayzo)
